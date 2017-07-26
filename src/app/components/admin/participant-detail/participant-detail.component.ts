@@ -11,11 +11,11 @@ import { Participant } from '../../../interfaces/participant';
 })
 export class ParticipantDetailComponent implements OnInit {
 
-  private inputName: string = "";
-  private inputSequence: number = 0;
-  private inputOptInOut: boolean = true;
+  public inputName: string = "";
+  public inputSequence: number = 0;
+  public inputOptInOut: boolean = true;
+  public routeMode: string = '';
 
-  private routeMode: string = '';
   private participantKey: string = '';
   private participant: Participant = null;
 

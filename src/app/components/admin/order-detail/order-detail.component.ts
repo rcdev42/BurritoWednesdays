@@ -12,13 +12,13 @@ import { Order } from '../../../interfaces/order';
 })
 export class OrderDetailComponent implements OnInit {
 
-  private inputDescription: string = "";
-  private inputHotSauce: string = "";
-  private inputMisc: string = "";
+  public inputDescription: string = "";
+  public inputHotSauce: string = "";
+  public inputMisc: string = "";
+  public routeMode: string = '';
+  public participant: Participant = null;
 
-  private routeMode: string = '';
   private participantKey: string = '';
-  private participant: Participant = null;
   private orderKey: string = '';
   private order: Order = null;
 

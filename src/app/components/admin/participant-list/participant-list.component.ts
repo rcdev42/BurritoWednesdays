@@ -12,7 +12,7 @@ import { Order } from '../../../interfaces/order';
 })
 export class ParticipantListComponent implements OnInit {
 
-  private participants: Participant[];
+  public participants: Participant[];
 
   constructor(private afDataService: AfDataService) { }
 

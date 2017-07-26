@@ -11,7 +11,7 @@ import { GlobalEventsManagerService } from './services/globalEventsManager.servi
 })
 export class AppComponent {
 
-  private isLoggedIn: boolean;
+  public isLoggedIn: boolean;
 
   constructor(private afAuthService: AfAuthService, private globalEventsManagerService: GlobalEventsManagerService, private router: Router) {
     // subscripe to the logged in event from the global event manager service

@@ -13,9 +13,10 @@ import { Order } from '../../../interfaces/order';
 })
 export class OrderListComponent implements OnInit {
 
+  public participant: Participant;
+  public orders: Order[];
+
   private participantKey: string = '';
-  private participant: Participant;
-  private orders: Order[];
 
   constructor(private afDataService: AfDataService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
