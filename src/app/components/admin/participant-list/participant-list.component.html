@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <h3>Participants</h3>
+
+      <div class="hidden-xs">
+        <table class="col-md-12 table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Sequence</th>
+                    <th>In/Out</th>
+                    <th>Turn</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let participant of participants">
+                    <td class="col-md-4">{{ participant.name }}</td>
+                    <td class="col-md-1">{{ participant.sequence }}</td>
+                    <td class="col-md-1"><input type="checkbox" class="form-control" id="inputOptInOut" name="inputOptInOut" [(ngModel)]="participant.optInOut" (click)="actionUpdateOptInOut(participant.$key)"></td>
+                    <td class="col-md-1"><input type="checkbox" class="form-control" id="inputPurchaseTurn" name="inputPurchaseTurn" [(ngModel)]="participant.purchaseTurn" (click)="actionUpdatePurchaseTurn(participant.$key)"></td>
+                    <td class="col-md-5" style="text-align:left">
+                        <a [routerLink]="['/admin/order-list', participant.$key]" class="btn btn-small btn-default">View Orders</a>
+                        <a [routerLink]="['/admin/participant-detail', 'update', participant.$key]" class="btn btn-small btn-primary">Edit</a>
+                        <a (click)="actionDelete(participant.$key, participant.name)" class="btn btn-small btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a [routerLink]="['/admin/participant-detail', 'create', 'new']" class="btn btn-small btn-primary">Create Participant</a>
+        <a [routerLink]="['']" class="btn btn-small btn-default">Home</a>
+      </div>
+
+    </div>
+  </div>
+</div>

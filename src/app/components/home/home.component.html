@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <h3>Current Orders by Participants</h3>
+
+      <table class="table table-striped table-condensed">
+          <tbody>
+              <tr *ngFor="let participant of participants">
+                  <td [ngStyle]="
+                      {
+                          'text-decoration': (('' + participant.optInOut == 'false') ? 'line-through' : 'normal'),
+                          'background-color': (('' + participant.purchaseTurn == 'false') ? 'inherit' : '#E0E8F0')
+                      }">
+                      <div style="font-size:1.4em">{{ participant.name }}</div>
+                      <div>Order: <strong *ngIf="participant.defaultOrder != null">{{ participant.defaultOrder.description }}</strong></div>
+                      <div>Hot Sauce: <span *ngIf="participant.defaultOrder != null">{{ participant.defaultOrder.hotSauce }}</span></div>
+                      <div>Misc.: <span *ngIf="participant.defaultOrder != null">{{ participant.defaultOrder.misc }}</span></div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

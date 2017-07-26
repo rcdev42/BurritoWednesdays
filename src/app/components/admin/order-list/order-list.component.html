@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <h3>Orders</h3>
+
+      <div class="hidden-xs">
+        <table class="col-md-12 table table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Hot Sauce</th>
+                    <th>Misc.</th>
+                    <th>Default</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td class="col-md-2">{{ order.description }}</td>
+                    <td class="col-md-3">{{ order.hotSauce }}</td>
+                    <td class="col-md-3">{{ order.misc }}</td>
+                    <td class="col-md-1"><input type="checkbox" class="form-control" id="inputDefaultOrder" name="inputPurchaseTurn" [checked]="participant.defaultOrderKey == order.$key" (click)="actionUpdateDefaultOrder(order.$key)"></td>
+                    <td class="col-md-3">
+                        <a [routerLink]="['/admin/order-detail', participant.$key, 'update', order.$key]" class="btn btn-small btn-primary">Edit</a>
+                        <a (click)="actionDelete(order.$key, order.description)" class="btn btn-small btn-danger">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a [routerLink]="['/admin/order-detail', participant.$key, 'create', 'new']" class="btn btn-small btn-primary">Create Order</a>
+        <a [routerLink]="['']" class="btn btn-small btn-default">Home</a>
+      </div>
+
+    </div>
+  </div>
+</div>
